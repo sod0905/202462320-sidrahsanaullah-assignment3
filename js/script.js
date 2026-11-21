@@ -201,8 +201,20 @@ fetch("https://api.github.com/users/sod0905/repos")
     return response.json();
   })
   .then((repos) => {
-    repoStatus.textContent = ""; 
     const grid = document.getElementById("repoGrid");
+
+    if (!grid) {
+      throw new Error("Repository grid is missing");
+    }
+
+    grid.replaceChildren();
+
+    if (repos.length === 0) {
+      repoStatus.textContent = "No public repositories found.";
+      return;
+    }
+
+    repoStatus.textContent = "";
 
     repos.forEach((repo) => {
       const card = document.createElement("article");
@@ -228,3 +240,22 @@ fetch("https://api.github.com/users/sod0905/repos")
   .catch(() => {
     repoStatus.textContent = "Could not load repositories. Please try again later.";
   });
+
+const timerDisplay = document.getElementById("timer");
+const timerMessage = document.getElementById("timerMessage");
+const startTime = Date.now();
+
+if (timerDisplay) {
+  setInterval(() => {
+    const elapsedSeconds = Math.floor((Date.now() - startTime) / 1000);
+
+    const minutes = String(Math.floor(elapsedSeconds / 60)).padStart(2, "0");
+    const seconds = String(elapsedSeconds % 60).padStart(2, "0");
+
+    timerDisplay.textContent = `${minutes}:${seconds}`;
+
+    if (timerMessage && elapsedSeconds >= 5) {
+      timerMessage.textContent = "Thanks for staying a while!";
+    }
+  }, 1000);
+}
