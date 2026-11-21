@@ -189,7 +189,8 @@ setGreeting();
   });
 })();
 
-/* GitHub repositories */
+/* GitHub repositories */ //The api integration
+
 const repoStatus = document.getElementById("repoStatus");
 repoStatus.textContent = "Loading repositories...";
 
@@ -241,6 +242,7 @@ fetch("https://api.github.com/users/sod0905/repos")
     repoStatus.textContent = "Could not load repositories. Please try again later.";
   });
 
+// timer for time spent on the page
 const timerDisplay = document.getElementById("timer");
 const timerMessage = document.getElementById("timerMessage");
 const startTime = Date.now();
@@ -254,8 +256,22 @@ if (timerDisplay) {
 
     timerDisplay.textContent = `${minutes}:${seconds}`;
 
-    if (timerMessage && elapsedSeconds >= 5) {
+    if (timerMessage && elapsedSeconds >= 25) {
       timerMessage.textContent = "Thanks for staying a while!";
     }
   }, 1000);
 }
+
+// Project filter 
+const projectFilter = document.getElementById("projectFilter");
+const projectCards = document.querySelectorAll("#projects .project");
+
+projectFilter.addEventListener("change", () => {
+  const selected = projectFilter.value;
+
+  projectCards.forEach((card) => {
+    const matches = selected === "all" || card.dataset.lang === selected;
+    card.classList.toggle("filtered-out", !matches);
+  });
+});
+

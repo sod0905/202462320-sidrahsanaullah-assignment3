@@ -75,8 +75,15 @@
       No projects found. Try a different word, or press Clear to see all projects.
     </p>
 
+    <label for="projectFilter">Filter projects:</label>
+    <select id="projectFilter">
+      <option value="all">All projects</option>
+      <option value="java">Java</option>
+      <option value="python">Python</option>
+    </select>
+
       <div class="grid">
-        <article class="project">
+        <article class="project" data-lang="java">
           <img class="project__img" src="assets/images/project1.svg" alt="Clinic system project preview" />
           <div class="project__body">
             <h3>Clinic Management System</h3>
@@ -91,7 +98,7 @@
           </div>
         </article>
 
-        <article class="project">
+        <article class="project" data-lang="python">
           <img class="project__img" src="assets/images/project2.svg" alt="Fitness app project preview" />
           <div class="project__body">
             <h3>Fitness App</h3>
@@ -106,7 +113,7 @@
           </div>
         </article>
 
-        <article class="project">
+        <article class="project" data-lang="java">
           <img class="project__img" src="assets/images/project3.svg" alt="Pentomino game project preview" />
           <div class="project__body">
             <h3>Pentomino Game</h3>

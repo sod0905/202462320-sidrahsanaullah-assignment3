@@ -548,3 +548,28 @@ textarea:focus {
   line-height: 1.5;
   overflow-wrap: anywhere;
 }
+
+.filter {
+  margin-top: 18px;
+}
+
+.filter label {
+  font-size: 8px;
+  color: var(--muted);
+  margin-right: 8px;
+}
+
+select {
+  font: inherit;
+  font-size: 14px;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.project.filtered-out {
+  display: none;
+}
