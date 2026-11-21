@@ -8,7 +8,7 @@ The purpose of the website is to introduce myself, show some of the projects I h
 
 The website is a static website, so it does not need a backend or database.
 
-In Assignment 3 the website also loads live data from the GitHub API and remembers some visitor settings in the browser.
+In Assignment 3, the website also loads live data from the GitHub API and remembers some visitor settings in the browser.
 
 ## 2. Technologies Used
 
@@ -48,7 +48,7 @@ The light/dark mode choice is saved in `localStorage` and restored when the page
 ![Lighthouse scores](lighthouse-scores.png)
 
 
-## 3. File Structure
+## 5. File Structure
 
 The project is organized into different folders so the files are easier to manage.
 

@@ -40,7 +40,7 @@ The website uses JavaScript for a few interactive features:
 4. Contact form validation.
 5. Smooth scrolling between sections.
 
-## New Javascript Features (for assignment 2)
+## Javascript Features (Assignment 2)
 1. Search projects by title, description or tags.
 2. Switch between light and dark mode. The selected theme is saved.
 3. Use the contact form, which checks the fields and shows a confirmation.
@@ -50,7 +50,7 @@ The website uses JavaScript for a few interactive features:
 ## New JavaScript Features (Assignment 3)
 1. GitHub API: the "My GitHub Repositories" section loads my repositories from the GitHub API. It shows a loading message, an error message if the request fails, and a message if there are no repositories.
 2. Project filter: projects can be filtered by language (All, Java, Python) and this works together with the search box.
-3. Timer: the footer shows how long a visitor has been on the page, and a thank-you message appears after one minute.
+3. Timer: the footer shows how long a visitor has been on the page, and a thank-you message appears after 25 seconds.
 4. Visitor name: visitors can enter their name, which is saved in the browser. A "Not you?" button clears it.
 5. Saved theme: the light/dark mode choice is remembered between visits.
 
@@ -66,7 +66,7 @@ You can also use VS Code with the Live Server extension if you have it installed
 The GitHub section requires an internet connection.
 
 ## AI Use Summary
-I changed the theme from blue to burgundy, and asked it to generate orange colored images which would make it fit the burgundy theme. The code of assignment1 was sent to Claude along with assignment 2's rubric and I asked for an explanation on how to begin the project, along with generating basic ideas for how to do each part of the project. I used chatgpt for more clarification and asked how to step by step do each part of the code and asked for verifications on my code and whether what i did was correct. There are more details in the AI-Usage-Report. 
+During Assignment 3, I used ChatGPT (GPT-6) to understand the requirements and get explanations and feedback about the GitHub API section, timer, project filter, visitor-name feature, and Lighthouse. I adapted the suggestions to my project. I tested the GitHub section online and offline, and my Desktop Lighthouse Performance score was 99/100. More details are in docs/ai-usage-report.md.
 
 ## Folder Structure
 
