@@ -1,6 +1,6 @@
 # Personal Portfolio - Sidrah Sanaullah
 
-This is my personal portfolio website for Assignment 2, which is an extension of the work that I have done in Assignment 1. I made it using HTML, CSS, and JavaScript, and this has more interactive features, animations and user feedback.
+This is my personal portfolio website for Assignment 3, which is an extension of the work that I have done in Assignment 1 &2. I made it using HTML, CSS, and JavaScript, and this has slightly more advanced functionality than before.
 
 ## Project Description
 
