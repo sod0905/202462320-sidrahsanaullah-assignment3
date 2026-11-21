@@ -1,12 +1,12 @@
 # Personal Portfolio - Sidrah Sanaullah
 
-This is my personal portfolio website for Assignment 3, which is an extension of the work that I have done in Assignment 1 &2. I made it using HTML, CSS, and JavaScript, and this has slightly more advanced functionality than before.
+This is my personal portfolio website for Assignment 3, which is an extension of the work that I have done in Assignment 1 & 2. I made it using HTML, CSS, and JavaScript, and this has slightly more advanced functionality than before, with a live GitHub API section.
 
 ## Project Description
 
 The website is a simple portfolio where I introduce myself, show some of the projects I have worked on, list my skills, and include a contact form.
 
-This is the second version of my portfolio, and I can add more to it in future assignments.
+This is the third version of my portfolio.
 
 ## Sections
 
@@ -47,6 +47,13 @@ The website uses JavaScript for a few interactive features:
 4. See animations when scrolling and hovering over project cards and buttons.
 5. View a result count or a message when no projects match the search.
 
+## New JavaScript Features (Assignment 3)
+1. GitHub API: the "My GitHub Repositories" section loads my repositories from the GitHub API. It shows a loading message, an error message if the request fails, and a message if there are no repositories.
+2. Project filter: projects can be filtered by language (All, Java, Python) and this works together with the search box.
+3. Timer: the footer shows how long a visitor has been on the page, and a thank-you message appears after one minute.
+4. Visitor name: visitors can enter their name, which is saved in the browser. A "Not you?" button clears it.
+5. Saved theme: the light/dark mode choice is remembered between visits.
+
 ## How to Run
 
 There is nothing that needs to be installed to run the website.
@@ -56,6 +63,7 @@ There is nothing that needs to be installed to run the website.
 3. Open `index.html` in a browser.
 
 You can also use VS Code with the Live Server extension if you have it installed.
+The GitHub section requires an internet connection.
 
 ## AI Use Summary
 I changed the theme from blue to burgundy, and asked it to generate orange colored images which would make it fit the burgundy theme. The code of assignment1 was sent to Claude along with assignment 2's rubric and I asked for an explanation on how to begin the project, along with generating basic ideas for how to do each part of the project. I used chatgpt for more clarification and asked how to step by step do each part of the code and asked for verifications on my code and whether what i did was correct. There are more details in the AI-Usage-Report. 
@@ -63,7 +71,7 @@ I changed the theme from blue to burgundy, and asked it to generate orange color
 ## Folder Structure
 
 ```text
-202462320-sidrahsanaullah-assignment2/
+202462320-sidrahsanaullah-assignment3/
 │
 ├── README.md
 ├── index.html
