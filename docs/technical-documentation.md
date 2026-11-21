@@ -48,7 +48,24 @@ The project is organized into different folders so the files are easier to manag
     ├── ai-usage-report.md
     └── technical-documentation.md
 
-## 4. Performance
+## 4. Features and How They Work
+
+### 4.1 GitHub API
+The page asks GitHub for my repositories using `fetch` and shows each one as a card with its name, description and language. It shows "Loading..." while waiting, and an error message if GitHub can't be reached.
+
+### 4.2 Project Filter
+Each project has a language label (`data-lang`). The dropdown hides the projects that don't match the language chosen. It works together with the search box.
+
+### 4.3 Timer
+The footer shows how long the visitor has been on the page, updated every second. After one minute, a thank-you message appears.
+
+### 4.4 Visitor Name
+The visitor's name is saved in the browser (`localStorage`) and shown in a welcome message. The "Not you?" button deletes it.
+
+### 4.5 Theme
+The light/dark mode choice is saved in `localStorage` and restored when the page loads.
+
+## 5. Performance
 - Images have width and height set and use lazy loading.
 - Lighthouse scores [Performance]: 99
 ![Lighthouse scores](lighthouse-scores.png)
