@@ -573,3 +573,36 @@ select {
 .project.filtered-out {
   display: none;
 }
+
+.visitor {
+  margin-top: 28px;
+  max-width: 420px;
+}
+
+.visitor form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.visitor label {
+  flex-basis: 100%;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.visitor input {
+  flex: 1;
+  min-width: 180px;
+}
+
+.visitor p {
+  margin: 0;
+  color: var(--accent-1);
+} 
+
+.visitor p {
+  margin-top: 12px;
+  margin-bottom: 0;
+}
