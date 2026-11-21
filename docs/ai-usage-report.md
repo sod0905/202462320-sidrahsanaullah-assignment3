@@ -19,7 +19,14 @@ ChatGPT provided explanations, code suggestions, and code review. It did not dir
 
 | ID | Tool (model) | Date | Purpose | Files affected | What I changed and how I verified it |
 |---|---|---|---|---|---|
-| C01 | ChatGPT (GPT-6) | 2026-11-21 | Explained Assignment 3 requirements and provided guidance and code review for the GitHub API section, CSS spacing, timer, project filter, visitor-name storage, and Lighthouse. | `index.html`, `css/styles.css`, `js/script.js` (I applied changes; ChatGPT did not edit files directly.) | I adapted the suggestions to my portfolio. I tested the GitHub section online and offline and reported that it worked. Lighthouse reported a Desktop Performance score of 99/100. Before submission, I verified that the project filter and visitor-name save/forget behavior work as intended. |
+| C01 | ChatGPT (GPT-6) | 2026-11-21 | Explained Assignment 3 requirements and provided guidance and code review for the GitHub API, CSS, timer, project filter, visitor-name feature, and Lighthouse. | `index.html`, `css/styles.css`, `js/script.js` | I adapted the suggestions. I tested the GitHub section online and offline. Lighthouse reported a Desktop Performance score of 99/100. I also tested the project filter and visitor-name save/forget behavior. |
+| A01 | ChatGPT (GPT-6) | 2026-11-21 | Suggested code for loading and displaying GitHub repositories with loading, empty-result, and error messages. | `js/script.js` | I adapted the suggestion to display my repositories. I tested it online and offline. |
+| A02 | ChatGPT (GPT-6) | 2026-11-21 | Suggested CSS for spacing the GitHub repository cards. | `css/styles.css` | I applied and adjusted the spacing, then checked how the cards looked in the browser. |
+| A03 | ChatGPT (GPT-6) | 2026-11-21 | Suggested elapsed-time timer code and a message based on time spent on the page. | `index.html`, `js/script.js` | I adapted the timer and message for my footer and checked that they appeared as intended. |
+| A04 | ChatGPT (GPT-6) | 2026-11-21 | Suggested logic for saving and displaying a visitor’s name with `localStorage`. | `index.html`, `js/script.js` | I adapted the suggestion for my visitor form and checked the save and forget-name behavior. |
+| A05 | ChatGPT (GPT-6) | 2026-11-21 | Suggested the project-filter dropdown and reviewed my filter logic. | `index.html`, `js/script.js` | I connected the dropdown to my project cards and checked the language filters with the search feature. |
+| A06 | ChatGPT (GPT-6) | 2026-11-21 | Suggested a smaller style for the project-filter dropdown. | `css/styles.css` | I simplified the dropdown styling and checked its appearance in the browser. |
+
 
 Declaration
 
