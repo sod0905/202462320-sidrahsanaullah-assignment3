@@ -277,34 +277,42 @@ projectFilter.addEventListener("change", () => {
 
 
 // remember visitor's name
+
 const visitorForm = document.getElementById("visitorForm");
 const visitorNameInput = document.getElementById("visitorName");
 const visitorInfo = document.getElementById("visitorInfo");
+const forgetBtn = document.getElementById("forgetName");
 
-// Show the saved name when the page opens
-const savedName = localStorage.getItem("visitorName");
+// Show the form if there is no saved name, otherwise show the welcome
+function showVisitor() {
+  const name = localStorage.getItem("visitorName");
+  const hasName = name !== null;
 
-if (savedName && visitorInfo && visitorForm) {
-  visitorInfo.textContent = `Welcome back, ${savedName}!`;
-  visitorInfo.hidden = false;
-  visitorForm.hidden = true;
+  visitorForm.hidden = hasName;
+  visitorInfo.hidden = !hasName;
+  forgetBtn.hidden = !hasName;
+
+  if (hasName) {
+    visitorInfo.textContent = `Welcome back, ${name}!`;
+  }
 }
 
-if (visitorForm && visitorNameInput && visitorInfo) {
-  visitorForm.addEventListener("submit", (event) => {
-    event.preventDefault();
+visitorForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const name = visitorNameInput.value.trim();
 
-    const name = visitorNameInput.value.trim();
+  if (name === "") {
+    return;
+  }
 
-    if (name.length < 2) {
-      visitorInfo.textContent = "Please enter at least 2 characters.";
-      visitorInfo.hidden = false;
-      return;
-    }
+  localStorage.setItem("visitorName", name);
+  visitorNameInput.value = "";
+  showVisitor();
+});
 
-    localStorage.setItem("visitorName", name);
-    visitorInfo.textContent = `Thanks, ${name}! I’ll remember you next time.`;
-    visitorInfo.hidden = false;
-    visitorForm.hidden = true;
-  });
-}
+forgetBtn.addEventListener("click", () => {
+  localStorage.removeItem("visitorName");
+  showVisitor();
+});
+
+showVisitor(); // run once when the page loads
