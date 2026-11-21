@@ -189,3 +189,42 @@ setGreeting();
   });
 })();
 
+/* GitHub repositories */
+const repoStatus = document.getElementById("repoStatus");
+repoStatus.textContent = "Loading repositories...";
+
+fetch("https://api.github.com/users/sod0905/repos")
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error("GitHub request failed");
+    }
+    return response.json();
+  })
+  .then((repos) => {
+    repoStatus.textContent = ""; 
+    const grid = document.getElementById("repoGrid");
+
+    repos.forEach((repo) => {
+      const card = document.createElement("article");
+      card.className = "project";
+
+      const body = document.createElement("div");
+      body.className = "project__body";
+
+      const title = document.createElement("h3");
+      title.textContent = repo.name;
+
+      const description = document.createElement("p");
+      description.textContent = repo.description || "No description provided.";
+
+      const language = document.createElement("p");
+      language.textContent = "Language: " + (repo.language || "Not specified");
+
+      body.append(title, description, language);
+      card.appendChild(body);
+      grid.appendChild(card);
+    });
+  })
+  .catch(() => {
+    repoStatus.textContent = "Could not load repositories. Please try again later.";
+  });

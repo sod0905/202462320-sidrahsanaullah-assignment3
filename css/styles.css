@@ -532,3 +532,19 @@ textarea:focus {
     transform: none;
   }
 }
+
+#repoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+  align-items: stretch;
+}
+
+#repoGrid .project {
+  box-sizing: border-box;
+  min-width: 0;
+  padding: 1.25rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
