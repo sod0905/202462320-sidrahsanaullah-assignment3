@@ -194,6 +194,7 @@ setGreeting();
 const repoStatus = document.getElementById("repoStatus");
 repoStatus.textContent = "Loading repositories...";
 
+// Send the request to GitHub
 fetch("https://api.github.com/users/sod0905/repos")
   .then((response) => {
     if (!response.ok) {
@@ -208,14 +209,14 @@ fetch("https://api.github.com/users/sod0905/repos")
       throw new Error("Repository grid is missing");
     }
 
-    grid.replaceChildren();
+    grid.replaceChildren();  //empty the grid first so cards are never duplicated
 
     if (repos.length === 0) {
       repoStatus.textContent = "No public repositories found.";
       return;
     }
 
-    repoStatus.textContent = "";
+    repoStatus.textContent = ""; // remove "Loading..."
 
     repos.forEach((repo) => {
       const card = document.createElement("article");
@@ -245,8 +246,9 @@ fetch("https://api.github.com/users/sod0905/repos")
 // timer for time spent on the page
 const timerDisplay = document.getElementById("timer");
 const timerMessage = document.getElementById("timerMessage");
-const startTime = Date.now();
+const startTime = Date.now(); // the moment the page loaded
 
+ // Run the code inside every 1000 milliseconds (once a second)
 if (timerDisplay) {
   setInterval(() => {
     const elapsedSeconds = Math.floor((Date.now() - startTime) / 1000);
@@ -255,7 +257,7 @@ if (timerDisplay) {
     const seconds = String(elapsedSeconds % 60).padStart(2, "0");
 
     timerDisplay.textContent = `${minutes}:${seconds}`;
-
+    // Condition: show a thank-you message after 25 seconds
     if (timerMessage && elapsedSeconds >= 25) {
       timerMessage.textContent = "Thanks for staying a while!";
     }
@@ -266,11 +268,13 @@ if (timerDisplay) {
 const projectFilter = document.getElementById("projectFilter");
 const projectCards = document.querySelectorAll("#projects .project");
 
+// Runs every time the dropdown choice changes
 projectFilter.addEventListener("change", () => {
   const selected = projectFilter.value;
 
   projectCards.forEach((card) => {
     const matches = selected === "all" || card.dataset.lang === selected;
+    // A separate class is used (not "hidden") so the filter and the search box do not undo each other
     card.classList.toggle("filtered-out", !matches);
   });
 });
@@ -285,12 +289,12 @@ const forgetBtn = document.getElementById("forgetName");
 
 // Show the form if there is no saved name, otherwise show the welcome
 function showVisitor() {
-  const name = localStorage.getItem("visitorName");
+  const name = localStorage.getItem("visitorName"); 
   const hasName = name !== null;
 
-  visitorForm.hidden = hasName;
-  visitorInfo.hidden = !hasName;
-  forgetBtn.hidden = !hasName;
+  visitorForm.hidden = hasName;   // hide the form once we know the name
+  visitorInfo.hidden = !hasName;  // show the welcome only if we have a name
+  forgetBtn.hidden = !hasName;    // same for the "Not you?" button
 
   if (hasName) {
     visitorInfo.textContent = `Welcome back, ${name}!`;
@@ -305,11 +309,11 @@ visitorForm.addEventListener("submit", (event) => {
     return;
   }
 
-  localStorage.setItem("visitorName", name);
+  localStorage.setItem("visitorName", name); // save in the browser
   visitorNameInput.value = "";
   showVisitor();
 });
-
+// "Not you?" deletes the saved name and brings the form back
 forgetBtn.addEventListener("click", () => {
   localStorage.removeItem("visitorName");
   showVisitor();
